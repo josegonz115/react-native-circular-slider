@@ -6,7 +6,8 @@
   "module": "build/index.mjs",
   "types": "build/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --minify --out-dir build"
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify --out-dir build",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -49,8 +50,11 @@
     "react-native-svg": "^13.14.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
     "@types/lodash.range": "^3.2.8",
     "@types/react": "^18.2.31",
+    "husky": "^8.0.0",
     "prettier": "3.0.3",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
