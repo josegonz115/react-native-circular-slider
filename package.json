@@ -32,8 +32,10 @@
     "email": "b@gryszko.com"
   },
   "files": [
+    "build",
     "src",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "license": "MIT",
   "bugs": {
