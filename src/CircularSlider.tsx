@@ -13,18 +13,31 @@ import { ClockFace } from "./ClockFace";
 import { calculateArcCircle, calculateArcColor, getGradientId } from "./utils";
 
 export type CircularSliderProps = {
+  /** When slider is moved, this callback is triggered with new values of startAngle and angleLength */
   onUpdate: (value: { startAngle: number; angleLength: number }) => void;
+  /** Angle, where slider starts (from 0 to 2 * Math.PI) */
   startAngle: number;
+  /** Length of the slider (from 0 to 2 * Math.PI) */
   angleLength: number;
+  /** SVG doesn't support canonical gradients, so it's imitated by using multiple linear gradients across the slider. In most cases 5 should be fine. */
   segments?: number;
+  /** Width of the slider */
   strokeWidth?: number;
+  /** Radius of the slider */
   radius?: number;
+  /** Initial gradient color */
   gradientColorFrom?: string;
+  /** Final gradient color */
   gradientColorTo?: string;
+  /** If component should show clock face */
   showClockFace?: boolean;
+  /** Color of the clock face */
   clockFaceColor?: string;
+  /** Color of the background circle */
   bgCircleColor?: string;
+  /** Icon at the end of the slider (SVG Path) */
   stopIcon?: ReactNode;
+  /** Icon at the start of the slider (SVG Path) */
   startIcon?: ReactNode;
 };
 
