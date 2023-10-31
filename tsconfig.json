@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src"
+  ]
+}
