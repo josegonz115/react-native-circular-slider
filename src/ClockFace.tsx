@@ -5,11 +5,13 @@ import range from "lodash.range";
 export type ClockFaceProps = {
   r: number;
   stroke: string;
+  format24Hour: boolean;
 };
 
-export const ClockFace = ({ r, stroke }: ClockFaceProps): React.JSX.Element => {
+export const ClockFace = ({ r, stroke, format24Hour}: ClockFaceProps): React.JSX.Element => {
   const faceRadius = r - 5;
   const textRadius = r - 26;
+  const [fullClock, halfClock] = [format24Hour ? 24 : 12, format24Hour ? 12 : 6];
 
   return (
     <G>
@@ -30,7 +32,7 @@ export const ClockFace = ({ r, stroke }: ClockFaceProps): React.JSX.Element => {
         );
       })}
       <G translate={"0, -9"}>
-        {range(12).map((h, i) => (
+        {range(fullClock).map((h, i) => (
           <Text
             key={i}
             fill={stroke}
@@ -38,11 +40,11 @@ export const ClockFace = ({ r, stroke }: ClockFaceProps): React.JSX.Element => {
             textAnchor="middle"
             x={
               textRadius *
-              Math.cos(((2 * Math.PI) / 12) * i - Math.PI / 2 + Math.PI / 6)
+              Math.cos(((2 * Math.PI) / fullClock) * i - Math.PI / 2 + Math.PI / halfClock)
             }
             y={
               textRadius *
-              Math.sin(((2 * Math.PI) / 12) * i - Math.PI / 2 + Math.PI / 6)
+              Math.sin(((2 * Math.PI) / fullClock) * i - Math.PI / 2 + Math.PI / halfClock)
             }
           >
             {h + 1}

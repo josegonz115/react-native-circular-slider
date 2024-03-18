@@ -31,6 +31,8 @@ export type CircularSliderProps = {
   gradientColorTo?: string;
   /** If component should show clock face */
   showClockFace?: boolean;
+  /** If clock should be in 24 hour format */
+  format24Hour?:boolean
   /** Color of the clock face */
   clockFaceColor?: string;
   /** Color of the background circle */
@@ -52,6 +54,7 @@ export const CircularSlider = ({
   clockFaceColor = "#9d9d9d",
   bgCircleColor = "#171717",
   showClockFace,
+  format24Hour,
   startIcon,
   stopIcon,
   onUpdate,
@@ -208,7 +211,7 @@ export const CircularSlider = ({
             stroke={bgCircleColor}
           />
           {showClockFace && (
-            <ClockFace r={radius - strokeWidth / 2} stroke={clockFaceColor} />
+            <ClockFace r={radius - strokeWidth / 2} stroke={clockFaceColor} format24Hour={format24Hour || false}/>
           )}
           {range(segments).map((i) => {
             const { fromX, fromY, toX, toY } = calculateArcCircle(
