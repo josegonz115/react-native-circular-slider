@@ -1,17 +1,17 @@
 {
-  "name": "@v3ron/react-native-circular-slider",
-  "version": "2.0.0",
+  "name": "@josegonz115/react-native-circular-slider",
+  "version": "2.0.1",
   "description": "React Native component for creating circular slider",
   "main": "build/index.js",
   "module": "build/index.mjs",
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --minify --out-dir build",
-    "prepare": "husky install"
+    "prepare": "npm run build && husky install"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/v3ron/react-native-circular-slider.git"
+    "url": "git+ssh://git@github.com/josegonz115/react-native-circular-slider.git"
   },
   "keywords": [
     "react",
@@ -28,8 +28,8 @@
     "react-component"
   ],
   "author": {
-    "name": "Bart Gryszko",
-    "email": "b@gryszko.com"
+    "name": "Jose Gonzalez",
+    "email": "josegonz115@gmail.com"
   },
   "files": [
     "build",
@@ -39,9 +39,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/v3ron/react-native-circular-slider/issues"
+    "url": "https://github.com/josegonz115/react-native-circular-slider/issues"
   },
-  "homepage": "https://github.com/v3ron/react-native-circular-slider",
+  "homepage": "https://github.com/josegonz115/react-native-circular-slider",
   "dependencies": {
     "d3-interpolate": "^3.0.1",
     "lodash.range": "^3.2.0"
